@@ -1,26 +1,5 @@
 
 
-// import 'package:flutter/material.dart';
-// import 'registration_screen.dart';
-
-// class OnboardingScreen extends StatelessWidget {
-//   @override
-//   Widget build(BuildContext context) {
-//     return Scaffold(
-//       body: Center(
-//         child: ElevatedButton(
-//           child: Text('Get Started'),
-//           onPressed: () => Navigator.push(
-//             context,
-//             MaterialPageRoute(builder: (context) => RegistrationScreen()),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'registration_screen.dart';

@@ -14,30 +14,7 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
   final nameController = TextEditingController();
   final emailController = TextEditingController();
 
-  // void register() async {
-  //   try {
-  //     await ApiService.registerUser(nameController.text, emailController.text);
-
-  //     // ✅ Store user ID in SharedPreferences
-  //     final prefs = await SharedPreferences.getInstance();
-  //     prefs.setString('userId', emailController.text); // Assuming email is unique ID
-
-  //     ScaffoldMessenger.of(context).showSnackBar(
-  //       SnackBar(content: Text("User registered")),
-  //     );
-
-  //     Navigator.pushReplacement(
-  //       context,
-  //       MaterialPageRoute(
-  //         builder: (context) => ShoppingListScreen(userId: emailController.text),
-  //       ),
-  //     );
-  //   } catch (e) {
-  //     ScaffoldMessenger.of(context).showSnackBar(
-  //       SnackBar(content: Text("Registration failed")),
-  //     );
-  //   }
-  // }
+ 
 
 void register() async {
   final name = nameController.text.trim();
@@ -51,9 +28,9 @@ void register() async {
   }
 
   try {
-    final userId = await ApiService.registerUser(name, email); // ✅ returns _id
+    final userId = await ApiService.registerUser(name, email); 
     final prefs = await SharedPreferences.getInstance();
-    prefs.setString('userId', userId); // ✅ storing ObjectId
+    prefs.setString('userId', userId); 
 
     Navigator.pushReplacement(
       context,

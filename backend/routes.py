@@ -4,12 +4,10 @@ from database import db
 from bson.objectid import ObjectId
 from datetime import datetime
 import json
-from models import User, ShoppingItem  # ← Imported from models.py
-
+from models import User, ShoppingItem 
 
 router = APIRouter()
 
-# ----------------- Routes ------------------
 
 @router.post("/register")
 def register(user: User):
@@ -20,14 +18,13 @@ def register(user: User):
     })
     return {
         "message": "User registered",
-        "user_id": str(result.inserted_id)  # 👈 return Mongo ObjectId
+        "user_id": str(result.inserted_id)  
 
     }
 
 @router.get("/shopping-items/{user_id}")
 def get_items(user_id: str):
     try:
-        # Validate if user_id is a valid ObjectId
         ObjectId(user_id)
     except Exception:
         raise HTTPException(status_code=400, detail="Invalid user ID format")
@@ -56,7 +53,7 @@ def add_item(item: ShoppingItem):
 @router.post("/shopping-items/custom")
 def add_custom_item(item: ShoppingItem):
     user_id = item.user_id
-    # If it's an email, convert to ObjectId
+    
     if '@' in user_id:
         user = db.users.find_one({"email": user_id})
         if not user:
