@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Restock groceries",
+    "repeat_interval": "weekly",
+    "reminder_time": "10:00",
+    "type": "predefined"
+  },
+  {
+    "title": "Buy cleaning supplies",
+    "repeat_interval": "monthly",
+    "reminder_time": "11:00",
+    "type": "predefined"
+  },
+  {
+    "title": "Order personal care products",
+    "repeat_interval": "monthly",
+    "reminder_time": "12:00",
+    "type": "predefined"
+  }
+]
